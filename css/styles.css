@@ -1,0 +1,36 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr  1fr  1fr;
+    grid-template-areas:
+            "header header header"
+            "content content sidebar";
+}
+
+.menu {
+    grid-area: header;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+
+.page {
+    grid-area: content;
+}
+
+
+.wrapper {
+    font-family: sans-serif;
+}
+
+nav {
+    background-color: black;
+    border-radius: 3px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.21);
+}

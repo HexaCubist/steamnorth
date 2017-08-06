@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="TrailGen">
+<head>
+	<title>Steam North Whangarei</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!-- Menu -->
+		<div class="menu" ng-include="'pages/common/menu.html'"></div>
+		<div class="sidebar" ng-include="'pages/common/sidebar.html'"></div>
+		<!-- Class containing Page Content -->
+		<article ng-view class="page {{pageClass}}"></article>
+	</div>
+<!-- Scripts -->
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-route.min.js"></script>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<!-- App.js containing scripts to load AngularJS -->
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
