@@ -3,14 +3,25 @@
 <head>
 	<title>Steam North Whangarei</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/web-icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/web-icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/web-icons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/web-icons/manifest.json">
+	<link rel="mask-icon" href="/assets/web-icons/safari-pinned-tab.svg" color="#0e60a9">
+	<link rel="shortcut icon" href="/assets/web-icons/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="Steam North">
+	<meta name="application-name" content="Steam North">
+	<meta name="msapplication-config" content="/assets/web-icons/browserconfig.xml">
+	<meta name="theme-color" content="#0e60a9">
+
 </head>
 <body>
-	<div class="wrapper">
+	<div class="wrapper {{pageClass}}">
 		<!-- Menu -->
 		<div class="menu" ng-include="'pages/common/menu.html'"></div>
 		<div class="sidebar" ng-include="'pages/common/sidebar.html'"></div>
 		<!-- Class containing Page Content -->
-		<article ng-view class="page {{pageClass}}"></article>
+		<article ng-view class="page"></article>
 	</div>
 <!-- Scripts -->
 <script type="text/javascript" src="lib/angular.min.js"></script>
