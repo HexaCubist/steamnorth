@@ -5,6 +5,10 @@ app.controller('HomeController', function($scope ,$rootScope, $location) {
     // $scope.pageClass = "page-home";
     $rootScope.pageClass = "page-home";
     $rootScope.isActive = function(route){ return route === $location.path(); }
+    $rootScope.pageinfo =  {
+        "Name": "Steam North Whangarei",
+        "Subtitle": "Slogan"
+    }
 
 });
 
@@ -16,22 +20,37 @@ app.controller('menu', function($scope, $location) {
 
 app.controller('AboutController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-about"
+        $rootScope.pageinfo =  {
+            "Name": "About Us",
+        }
 });
 
 app.controller('LocomotivesController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-locomotives"
+        $rootScope.pageinfo =  {
+            "Name": "Locomotives",
+        }
 });
 
 app.controller('EventsController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-events"
+        $rootScope.pageinfo =  {
+            "Name": "Events",
+        }
 });
 
 app.controller('VenueController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-venue"
+        $rootScope.pageinfo =  {
+            "Name": "Venue",
+        }
 });
 
 app.controller('SponsorsController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-sponsors"
+        $rootScope.pageinfo =  {
+            "Name": "Sponsors",
+        }
 });
 
 
@@ -44,7 +63,7 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
         templateUrl : "pages/home.html",
-        controller: 'HomeController'
+        controller: 'HomeController',
     })
     .when("/about", {
         templateUrl : "pages/about.html",
@@ -67,3 +86,19 @@ app.config(function($routeProvider, $locationProvider) {
         controller: 'SponsorsController'
     })
 });
+
+
+
+// DIRECTIVES
+app.directive('hero', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            header: '@',
+            subheader: '@'
+        },
+        template: '<div class="splash" style="background-image: url(\'https://source.unsplash.com/900x600?tree&sig={{header}}\');"><div class="splash-content"><h1>{{header}}</h1><h2>{{subheader}}</h2></div></div>',
+        controller: function ($scope) {}
+    }
+})

@@ -5,21 +5,22 @@ body, html {
 
 .wrapper {
     display: grid;
-    width: 100%;
-    max-width: 750px;
     margin: 0 auto;
     grid-template-columns: repeat(3, 1fr);
     /*grid-gap: 20px;*/
     grid-template-areas:
-            "header header header"
+            "header  header  header"
+            "hero    hero    hero"
             "content content sidebar";
 }
 
 .wrapper.page-home {
     /*CSS Grid for homepage (no sidebar*/
+    grid-template-columns: 100%;
     grid-template-areas:
-            "header  header  header"
-            "content content content";
+            "header"
+            "hero"
+            "content";
 }
 
 .wrapper.page-home .sidebar {
@@ -34,9 +35,16 @@ body, html {
     grid-area: sidebar;
 }
 
-.page {
+hero {
+    grid-area: hero;
+    position: relative;
+}
+
+article {
     grid-area: content;
     position: relative;
+    width: 100%;
+    max-width: 750px;
 }
 
 
@@ -64,7 +72,7 @@ nav {
     z-index: 100;
 }
 
-.wrapper.page-home nav {
+.wrapper nav {
     position: absolute;
     width: 100%;
     /* max-width: 750px; */
@@ -104,15 +112,12 @@ nav a.active {
 
 /*SPLASH IMAGE*/
 .splash {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
+/*    margin-left: -50vw;
     margin-right: -50vw;
-/*    padding-top: 100px;
+*/    /*    padding-top: 100px;
     padding-bottom: 100px;
-*/    text-align: center;
+*/
+    text-align: center;
     background: #CDDC39;
     background-image: url('https://source.unsplash.com/900x600?train');
     background-size: cover;
