@@ -4,24 +4,41 @@ body, html {
 
 
 .wrapper {
-    display: grid;
     margin: 0 auto;
-    grid-template-columns: repeat(3, 1fr);
-    /*grid-gap: 20px;*/
-    grid-template-areas:
-            "header  header  header"
-            "hero    hero    hero"
-            "content content sidebar";
 }
 
-.wrapper.page-home {
+/*Basic Layout*/
+.wrapper {
+    display: grid;
     /*CSS Grid for homepage (no sidebar*/
     grid-template-columns: 100%;
     grid-template-areas:
             "header"
             "hero"
+            "content"
+            "sidebar"
+            "footer";
+}
+
+/*Layout for wider screens*/
+@media (min-width: 500px) {
+    .page-body {
+        display: grid;
+        /*CSS Grid for homepage (no sidebar*/
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "content    sidebar"
+    }
+}
+
+/*Layout for homepage (without sidebar*/
+.page-home .page-body {
+    /*CSS Grid for homepage (no sidebar*/
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
             "content";
 }
+
 
 .wrapper.page-home .sidebar {
     grid-area: none;
@@ -35,16 +52,19 @@ body, html {
     grid-area: sidebar;
 }
 
-hero {
+.splash {
     grid-area: hero;
     position: relative;
 }
 
 article {
     grid-area: content;
-    position: relative;
-    width: 100%;
-    max-width: 750px;
+}
+
+.page-body {
+    width: 100%; 
+    max-width: 900px; 
+    margin: auto; 
 }
 
 
