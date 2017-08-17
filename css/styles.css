@@ -1,3 +1,11 @@
+* {
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
 body, html {
     margin: 0px !important;
 }
@@ -50,6 +58,8 @@ body, html {
 }
 .sidebar {
     grid-area: sidebar;
+    color: #111;
+    padding-top: 20px;
 }
 
 .splash {
@@ -59,6 +69,14 @@ body, html {
 
 article {
     grid-area: content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+/*    border: 0px;
+    border-right: 3px;
+    border-color: #111;
+    border-style: dashed;*/
+    color: #111;
 }
 
 .page-body {
@@ -168,4 +186,59 @@ nav a.active {
     background: #5C258D;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/*Article CSS*/
+article > *:first-child {
+    margin-top: 0px;
+}
+
+
+.feature-table {
+    width: 100%;
+    text-align: center;
+    /* background: #8BC34A; */
+}
+
+.feature-table td {
+    padding: 20px;
+    /* color: white; */
+    font-size: 1.5em;
+    font-weight: 600;
+    position: relative;
+    top: 0px;
+}
+
+.feature-table td:hover {
+    top: -10px;
+}
+
+.locomotive {
+    display: table;
+    width: 100%;
+
+}
+
+.locomotive .pic {
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-right: 10px;
+}
+
+.locomotive .pic:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.locomotive h3 {
+display: inline-block;
+}
+
+.locomotive p {
+    
 }

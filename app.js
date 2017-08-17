@@ -4,6 +4,8 @@ var app = angular.module("TrailGen", ["ngRoute"]);
 app.controller('HomeController', function($scope ,$rootScope, $location) {
     // $scope.pageClass = "page-home";
     $rootScope.pageClass = "page-home";
+    $rootScope.pageName = "Steam North Whangarei";
+    $rootScope.pageSubName = "Welcome!";
     $rootScope.isActive = function(route){ return route === $location.path(); }
     $rootScope.pageinfo =  {
         "Name": "Steam North Whangarei",
@@ -20,6 +22,8 @@ app.controller('menu', function($scope, $location) {
 
 app.controller('AboutController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-about"
+    $rootScope.pageName = "About Us"
+    $rootScope.pageSubName = "";
         $rootScope.pageinfo =  {
             "Name": "About Us",
         }
@@ -27,6 +31,8 @@ app.controller('AboutController', function($scope, $rootScope) {
 
 app.controller('LocomotivesController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-locomotives"
+    $rootScope.pageName = "Locomotives"
+    $rootScope.pageSubName = "";
         $rootScope.pageinfo =  {
             "Name": "Locomotives",
         }
@@ -34,6 +40,8 @@ app.controller('LocomotivesController', function($scope, $rootScope) {
 
 app.controller('EventsController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-events"
+    $rootScope.pageName = "Events"
+    $rootScope.pageSubName = "";
         $rootScope.pageinfo =  {
             "Name": "Events",
         }
@@ -41,6 +49,8 @@ app.controller('EventsController', function($scope, $rootScope) {
 
 app.controller('VenueController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-venue"
+    $rootScope.pageName = "Our Venue"
+    $rootScope.pageSubName = "";
         $rootScope.pageinfo =  {
             "Name": "Venue",
         }
@@ -48,6 +58,8 @@ app.controller('VenueController', function($scope, $rootScope) {
 
 app.controller('SponsorsController', function($scope, $rootScope) {
     $rootScope.pageClass = "page-sponsors"
+    $rootScope.pageName = "Our Sponsors"
+    $rootScope.pageSubName = "";
         $rootScope.pageinfo =  {
             "Name": "Sponsors",
         }
@@ -99,6 +111,20 @@ app.directive('hero', function() {
             subheader: '@'
         },
         template: '<div class="splash" style="background-image: url(\'https://source.unsplash.com/900x600?tree&sig={{header}}\');"><div class="splash-content"><h1>{{header}}</h1><h2>{{subheader}}</h2></div></div>',
+        controller: function ($scope) {}
+    }
+});
+
+app.directive('locomotive', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            name: '@',
+            desc: '@',
+            src: '@'
+        },
+        template: '<div class="locomotive"><div class="pic" style="background-image: url(\'{{src}}\')"></div><h3>{{name}}</h3><p>{{desc}}</p></div>',
         controller: function ($scope) {}
     }
 })
