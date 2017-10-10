@@ -3,8 +3,6 @@ body, html {
 }
 
 nav {
-    position: absolute;
-    top: 0px;
     width: 50%;
     z-index: 11;
     background: white;
@@ -26,12 +24,14 @@ nav .items a:hover {
 }
 
 nav .items {
-	float: right;
+	display: block;
+	text-align: center;
 }
 
 nav .logo {
 	height: 55px;
 	padding: 10px;
+	float: left;
 }
 
 header {
@@ -79,4 +79,29 @@ article > *:first-child {
 
 article img {
 	max-width: 100%; /* Stops any images from overflowing the article */
+}
+
+/* Cards Layout */
+.cards {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.cards .card {
+	position: relative;
+	padding: 30px;
+	height: 175px;
+	padding-bottom: 60px;
+	width: 200px;
+	padding-top: 10px;
+	margin: 20px;
+}
+.cards .card .bottom {
+	position: absolute;
+	bottom: 20px;
+}
+
+.cards > a {
+	color: black;
 }
