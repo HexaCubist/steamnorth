@@ -1,16 +1,70 @@
+/* Uniform font cross-browser and cross-platform */
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
-header {
+/* Animate everything! */
+* {
+  transition: all 0.25s ease;
+}
+
+/* Nav Styles */
+nav a img {
+  opacity: 1;
+}
+nav a img:hover {
+  opacity: 0.5;
+}
+
+
+/* Header Styles */
+header .background {
 	background-size: cover;
 	background-position: center;
+  background-image: url('../assets/feature-1-o.jpg');
 }
 
 header .background-washout {
-	background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.3);
 }
 
+header.full.logo .background-washout {
+  background: rgba(255,255,255,0.2);
+}
+
+
+/* Header CSS Animation */
+/* This is why we placed the background in a separate div - so that we can animate it with transform for subpixel animation (smoother)*/
+
+@keyframes slide {
+  0% {transform: translateX(0vw) scale(1.2); }
+  50% {transform: translateX(20vw) scale(1.2); }
+  100% {transform: translateX(0vw) scale(1.2); }
+}
+
+/* Header Logo animation */
+header.full.logo:hover .logo {
+  transform: scale(1.02);
+}
+
+header.full.logo .logo {
+  transition: all 0.5s ease-in-out;
+}
+
+header.full.logo:hover .background {
+  filter: blur(12px);
+}
+
+header .background {
+  background-size: cover;
+}
+header.full.logo .background {
+  animation: slide 90s ease-out infinite;
+  background-size: 120vw;
+  filter: blur(8px);
+  transition: filter 0.5s ease-in-out;
+  transform: translateX(0vw) scale(1.2)
+}
 
 /* Material Design Box Shadows */
 /* Taken from https://codepen.io/sdthornton/pen/wBZdXq */
