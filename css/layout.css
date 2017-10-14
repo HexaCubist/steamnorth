@@ -54,6 +54,7 @@ header.full {
 
 header.full.logo {
 	cursor: pointer;
+	text-align: center;
 }
 header h1, header object, header img {
 	max-width: 30%;
@@ -159,6 +160,13 @@ article img {
 	width: 50vw;
 	padding-bottom: 28vw;
 	z-index: 100;
+}
+
+/* Side Map */
+iframe.side-map {
+    float: right;
+    width: 50%;
+    height: 500px;
 }
 
 /* Fade in and out CSS*//*

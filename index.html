@@ -15,7 +15,7 @@
 </head>
 <body>
 	<nav>
-		<a href="/"><img class="logo" src="assets/logo_o.svg" alt="Whangarei Steam & Model Railway Club"></a>
+		<a href="./"><img class="logo" src="assets/logo_o.svg" alt="Whangarei Steam & Model Railway Club"></a>
 		<div class="items">
 			<a href="./" class="active">Home</a>
 			<a href="pages/about.html">About</a>
@@ -29,27 +29,27 @@
 		<div class="background"></div>
 		<div class="background-washout"></div>
 		<img src="assets/logo_o.svg" class="logo" id="logo">
-		<!-- <object data="assets/logo_o.svg" class="logo" type="image/svg+xml" alt="Whangarei Steam & Model Railway Club"> -->
+		<button>Watch Video	&#187;</button>
 		</object>
 	</header>
 	<article>
-		<h2 style="text-align: center;">Tour</h2>
+		<h2 style="text-align: center;">Photo Album</h2>
 		<div class="album">
-			<a href="pages/tour.html">
+			<a href="pages/tour.html#album">
 				<div class="image-container"><img src="assets/photos/thumb-1.jpg"></div>
-				<p>Bush Room</p>
+				<p>View More...</p>
 			</a>
-			<a href="pages/tour.html">
+			<a href="pages/tour.html#album">
 				<div class="image-container"><img src="assets/photos/thumb-2.jpg"></div>
-				<p>Picnic Area</p>
+				<p>View More...</p>
 			</a>
-			<a href="pages/tour.html">
+			<a href="pages/tour.html#album">
 				<div class="image-container"><img src="assets/photos/thumb-3.jpg"></div>
-				<p>Riponui Pah School</p>
+				<p>View More...</p>
 			</a>
-			<a href="pages/tour.html">
+			<a href="pages/tour.html#album">
 				<div class="image-container"><img src="assets/photos/thumb-4.jpg"></div>
-				<p>Large Train Station</p>
+				<p>View More...</p>
 			</a>
 		</div>
 		<h1>Welcome to Steam North Whangarei</h1>
@@ -61,12 +61,12 @@
 				<p>We've built a timeline of the history of Steam North, and you can view it on the About Us page.</p>
 				<p class="bottom">Read More...</p>
 			</div></a>
-			<a href="pages/times.html" class="button"><div class="card card-1">
+			<a href="pages/visit.html" class="button"><div class="card card-1">
 				<h2>Timetable</h2>
 				<p>Take a look at our timetable to find out when our open days are.</p>
 				<p class="bottom">Read More...</p>
 			</div></a>
-			<a href="pages/times.html" class="button"><div class="card card-1">
+			<a href="pages/contact.html" class="button"><div class="card card-1">
 				<h2>Contact Us</h2>
 				<p>Get in touch! Have any questions or want to join our club? Leave a message or call us on the Contact Us page.</p>
 				<p class="bottom">Read More...</p>
@@ -77,7 +77,7 @@
 	<div class="video-modal" id="video-modal">
 		<div class="modal-backdrop" id="temp-modal-bg"></div>
 		<div class="embed-container">
-			<iframe src='https://www.youtube.com/embed/D6EJJWabz98?rel=0&color=white' frameborder='0' allowfullscreen></iframe>
+			<iframe id="video-content" src='https://www.youtube.com/embed/D6EJJWabz98?rel=0&color=white&version=3&enablejsapi=1&version=3&playerapiid=ytplayer' frameborder='0' allowfullscreen></iframe>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -89,6 +89,7 @@
 		document.getElementById("temp-modal-bg").addEventListener('click',function () {
 			document.getElementById("video-modal").style.visibility = "hidden";
 			document.getElementById("video-modal").style.opacity = "0";
+			document.getElementById("video-content").contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 		});
 
 	</script>
