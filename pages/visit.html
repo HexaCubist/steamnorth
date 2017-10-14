@@ -19,17 +19,25 @@
 			<a href="../pages/about.html">About</a>
 			<a href="../pages/locomotives.html">Locomotives</a>
 			<a href="../pages/tour.html">Tour</a>
-			<a href="../pages/times.html">Times</a>
+			<a href="../pages/visit.html" class="active">Visit</a>
 			<a href="../pages/contact.html">Contact</a>
 		</div>
 	</nav>
-	<header class="full iframe" style="background-image: url('../assets/feature-1-o.jpg');">
+	<header class="full iframe">
+		<div class="background"></div>
 		<div class="background-washout"></div>
-		<h1>Times</h1>
+		<h1>Visit Us</h1>
 	</header>
 	<article>
-		<p>The Whangarei Steam &amp; Model Railway Club runs every third Sunday. Check our times below:</p>
-		<!-- (Google Calendar) -->
+		<p>The Whangarei Steam &amp; Model Railway Club runs every third Sunday of the month. Check our upcoming times below:</p>
+		<iframe src="https://calendar.google.com/calendar/embed?title=%20&amp;showPrint=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=hexacubist.com_d8qjadlsk0ir9htkvta0b8pndo%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=Pacific%2FAuckland" style="border-width:0;width: 100%;height: 400px;" scrolling="no"></iframe>
 	</article>
 </body>
+<script> 
+// I shouldn't need to use this.
+// However, Google Chrome has an issue with animations where it will animate from device defaults on page load, giving the page a jump.
+// The issue is documented here: https://bugs.chromium.org/p/chromium/issues/detail?id=332189
+// > Temporary fix: Add a <script> element containing a single space to the footer of the HTML page.
+ 
+</script>
 </html>

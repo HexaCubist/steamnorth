@@ -17,7 +17,7 @@
 	<nav>
 		<a href="/"><img class="logo" src="assets/logo_o.svg" alt="Whangarei Steam & Model Railway Club"></a>
 		<div class="items">
-			<a href="./">Home</a>
+			<a href="./" class="active">Home</a>
 			<a href="pages/about.html">About</a>
 			<a href="pages/locomotives.html">Locomotives</a>
 			<a href="pages/tour.html">Tour</a>
@@ -25,9 +25,12 @@
 			<a href="pages/contact.html">Contact</a>
 		</div>
 	</nav>
-	<header class="full iframe" style="background-image: url('assets/feature-1-o.jpg');">
+	<header class="full logo iframe" id="header-modal">
+		<div class="background"></div>
 		<div class="background-washout"></div>
-		<img src="assets/logo_o.svg" alt="Whangarei Steam & Model Railway Club">
+		<img src="assets/logo_o.svg" class="logo" id="logo">
+		<!-- <object data="assets/logo_o.svg" class="logo" type="image/svg+xml" alt="Whangarei Steam & Model Railway Club"> -->
+		</object>
 	</header>
 	<article>
 		<h2 style="text-align: center;">Tour</h2>
@@ -70,5 +73,31 @@
 			</div></a>
 		</div>
 	</article>
+	<!-- Video Modal -->
+	<div class="video-modal" id="video-modal">
+		<div class="modal-backdrop" id="temp-modal-bg"></div>
+		<div class="embed-container">
+			<iframe src='https://www.youtube.com/embed/D6EJJWabz98?rel=0&color=white' frameborder='0' allowfullscreen></iframe>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("header-modal").addEventListener('click',function () {
+			document.getElementById("video-modal").style.opacity = "1";
+			document.getElementById("video-modal").style.visibility = "visible";
+		});
+
+		document.getElementById("temp-modal-bg").addEventListener('click',function () {
+			document.getElementById("video-modal").style.visibility = "hidden";
+			document.getElementById("video-modal").style.opacity = "0";
+		});
+
+	</script>
 </body>
+<script> 
+// I shouldn't need to use this.
+// However, Google Chrome has an issue with animations where it will animate from device defaults on page load, giving the page a jump.
+// The issue is documented here: https://bugs.chromium.org/p/chromium/issues/detail?id=332189
+// > Temporary fix: Add a <script> element containing a single space to the footer of the HTML page.
+ 
+</script>
 </html>
