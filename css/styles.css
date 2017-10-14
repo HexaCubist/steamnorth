@@ -53,6 +53,7 @@ header.full.logo .logo {
 
 header.full.logo:hover .background {
   filter: blur(12px);
+  background-size: 117vw;
 }
 
 header .background {
@@ -60,9 +61,9 @@ header .background {
 }
 header.full.logo .background {
   animation: slide 90s ease-out infinite;
-  background-size: 120vw;
+  background-size: 121vw;
   filter: blur(8px);
-  transition: filter 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transform: translateX(0vw) scale(1.2)
 }
 
@@ -82,10 +83,12 @@ header button {
   transition: all 0.5s ease-out;
   opacity: 1;
   cursor: pointer;
+  transform: scale(1);
 }
 
 header:hover button {
   opacity: 0.7;
+  transform: scale(0.95);
 }
 
 /* Material Design Box Shadows */
