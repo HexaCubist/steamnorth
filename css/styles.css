@@ -44,7 +44,7 @@ header.full.logo .background-washout {
 
 /* Header Logo animation */
 header.full.logo:hover .logo {
-  transform: scale(1.02);
+  transform: scale(0.95);
 }
 
 header.full.logo .logo {
@@ -52,7 +52,7 @@ header.full.logo .logo {
 }
 
 header.full.logo:hover .background {
-  filter: blur(12px);
+  filter: blur(8px);
   background-size: 117vw;
 }
 
@@ -62,7 +62,7 @@ header .background {
 header.full.logo .background {
   animation: slide 90s ease-out infinite;
   background-size: 121vw;
-  filter: blur(8px);
+  /*filter: blur(8px);*/
   transition: all 0.5s ease-in-out;
   transform: translateX(0vw) scale(1.2)
 }
@@ -88,7 +88,7 @@ header button {
 
 header:hover button {
   opacity: 0.7;
-  transform: scale(0.95);
+  transform: scale(1.1);
 }
 
 /* Material Design Box Shadows */
