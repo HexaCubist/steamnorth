@@ -1,0 +1,238 @@
+body, html {margin: 0px;}
+
+nav {
+	max-width: 900px;
+	z-index: 11;
+	background: white;
+	text-align: center;
+	margin: auto;
+ }
+
+	nav .items a {
+		display: inline-block;
+		padding: 30px;
+		text-decoration: none;
+		font-size: 15px;
+		line-height: 15px;
+		color: #222;
+	 }
+
+		nav .items a:hover {background: rgba(0, 0, 0, 0.11) !important;}
+
+		nav .items a.active {background: #eee;}
+
+	nav .items {
+		display: block;
+		text-align: center;
+	 }
+
+	nav .logo {
+		height: 55px;
+		padding: 10px;
+		float: left;
+	 }
+
+header {
+	top: 0px;
+	margin: 0px !important;
+	padding: 100px 0px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+ }
+
+	header.full {margin: 200px 0px;}
+
+		header.full.logo {
+			cursor: pointer;
+			text-align: center;
+		 }
+
+	header h1, header object, header img {
+		max-width: 30%;
+		margin: auto;
+		position: relative;
+		z-index: 10;
+		font-size: 3em;
+	 }
+
+	header .background-washout {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		z-index: 1;
+	 }
+
+	header .background {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+	 }
+
+	header.full.logo .background {
+		position: absolute;
+		width: 140%;
+		height: 100%;
+		top: 0px;
+		left: -40vw
+	 }
+
+article {
+	width: 900px;
+	max-width: calc( 100% - 60px );
+	margin: auto;
+	background: white;
+	padding: 30px;
+	transform: translateZ(0px);
+ }
+
+	/* Selects the first child of the Article area, in orde to remove uneeded margins */
+	article > *:first-child {
+		margin-top: 0px;
+		padding-top: 0px;
+	 }
+
+	article img {max-width: 100%; /* Stops any images from overflowing the article */}
+
+/* Cards Layout */
+.cards {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+ }
+
+	.cards .card {
+		position: relative;
+		padding: 30px;
+		height: 175px;
+		padding-bottom: 60px;
+		width: 200px;
+		padding-top: 10px;
+		margin: 20px;
+	 }
+
+		.cards .card .bottom {
+			position: absolute;
+			bottom: 20px;
+		 }
+
+	.cards > a {color: black;}
+
+/* Video modal for homepage */
+.video-modal {
+	opacity: 0;
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 100;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+ }
+
+.modal-backdrop {
+	background: black;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 99;
+	opacity: 0.5;
+ }
+
+.video-modal .embed-container {
+	width: 50vw;
+	padding-bottom: 28vw;
+	z-index: 100;
+ }
+
+/* Side Map */
+iframe.side-map {
+	float: right;
+	width: 50%;
+	height: 500px;
+ }
+
+/* Uniform font cross-browser and cross-platform */
+body {font-family: 'Roboto', sans-serif;}
+
+/* Animate everything! */
+* {transition: all 0.25s ease;}
+
+/* Nav Styles */
+nav a img {opacity: 1;}
+
+	nav a img:hover {opacity: 0.5;}
+
+/* Header Styles */
+header .background {
+	background-size: cover;
+	background-position: center;
+	background-image: url('../assets/feature-1-o.jpg');
+ }
+
+header .background-washout {background: rgba(255,255,255,0.3);}
+
+header .background {background-size: cover;}
+
+header button {
+	position: relative;
+	display: block;
+	margin: auto;
+	font-size: 1.5em;
+	background: rgb(0, 0, 0);
+	border: 0px transparent;
+	z-index: 1;
+	color: white;
+	font-weight: 700;
+	padding: 10px 15px 10px 15px;
+	border-radius: 5px;
+	transition: all 0.5s ease-out;
+	opacity: 1;
+	cursor: pointer;
+	transform: scale(1);
+ }
+
+header:hover button {
+	opacity: 0.7;
+	transform: scale(1.1);
+ }
+
+/* Material Design Box Shadows */
+/* Taken from https://codepen.io/sdthornton/pen/wBZdXq */
+.card {
+	background: #fff;
+	border-radius: 2px;
+	display: inline-block;
+	height: 300px;
+	margin: 1rem;
+	position: relative;
+	width: 300px;
+ }
+
+.card-1 {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+ }
+
+	.card-1:hover {box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+
+.card-2 {box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+
+.card-3 {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}
+
+.card-4 {box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+
+.card-5 {box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);}
+
+
+/* Media Query */
+@media (max-width: 900px) {
+	nav .logo {
+		width: 100%;
+	}
+}
