@@ -9,14 +9,30 @@ header.full.logo .logo, header.full.logo .background {transition: all 0.5s ease-
 
 /* Blur the backgron on hover */
 header.full.logo:hover .background {
-	filter: blur(8px);
-	background-size: 117vw;
+    filter: blur(8px);
+    background-size: 120vw;
+    height: 120%;
+    top: -10%;
+}
+
+/* Hint interactivity with logo */
+header.full.logo {
+		cursor: pointer;
+		text-align: center;
+}
+		
+/* Full header background is sized and positioned so that it can animate with a left-right pan */
+header.full.logo .background {
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	width: 120vw;
 }
 
 /* Zoom in the Background by default */
 header.full.logo .background {
-	animation: slide 90s ease-out infinite;
-	background-size: 121vw;
+	animation: slide 9s ease-out infinite;
+	background-size: 125vw;
 	transform: translateX(0vw) scale(1.2)
 }
 
@@ -55,7 +71,7 @@ header:hover button {
 /* This is why we placed the background in a separate div - so that we can animate it with transform for subpixel animation (smoother)*/
 
 @keyframes slide {
-	0% {transform: translateX(0vw) scale(1.2); }
-	50% {transform: translateX(20vw) scale(1.2); }
-	100% {transform: translateX(0vw) scale(1.2); }
+	0% {transform: translateX(0vw); }
+	50% {transform: translateX(-20vw); }
+	100% {transform: translateX(0vw); }
 }
