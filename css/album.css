@@ -1,17 +1,26 @@
 /*Album CSS for the Tour page*/
+/* Main album parent div */
 .album {
+	/* Flexbox for responsive rearrangement */
 	display: flex;
+	/* Align content within it to the left */
 	justify-content: left;
+	/* Wrap onto a new line if there is no more room */
 	flex-wrap: wrap;
+	/* Fill 100% of the parent div */
 	width: 100%;
 }
 
+/* Each item in the album (A Tag direct descendants) */
 .album > a {
-	-webkit-box-flex: auto;
-	-ms-flex: auto;
+	/* Will make the item fill up any remaining space if there is any */
 	flex: auto;
+	/* Sets the hard width - any size less than this and it will wrap to the next line */
 	width: 200px;
+	/* Simple margin to add space between items*/
+	/* VW is the percentage of the total browser size */
 	margin: .5vw;
+	/* Animate all features of this where animation is possible. Overrides slightly shorter default animation set in style.css */
 	-webkit-transition: all 0.33s ease;
 	-moz-transition: all 0.33s ease;
 	-ms-transition: all 0.33s ease;
@@ -20,10 +29,12 @@
 	position: relative;
 }
 
+/* Image container inside each item of the album - used to stop overflowing of the image when we animate a scale. */
 a .image-container {
 	overflow: hidden;
 }
 
+/* All images inside the item (only one is defined in the HTML) will fill their parent and animate with the same properties as defined above */
 .album > a img {
 	width: 100%;
 	height: auto;
@@ -33,28 +44,35 @@ a .image-container {
 	-o-transition: all 0.33s ease;
 	transition: all 0.33s ease; 
 }
+
+/* Animate a blur, darken (so that the white text is visible), and a slight zoom effect on hover */
 .album > a:hover img {
 	filter: blur(5px) brightness(0.9);
 	transform: scale(1.3);
 }
 
+/* Scale the whole item and give it a shadow (material design style) to make it "pop" out of place */
 .album > a:hover {
 	transform: scale(1.1);
 	z-index: 100;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+/* Basic text definition */
 .album > a p {
+	/* Position absolute relative to parent "a" */
 	position: absolute;
-	top: 0;
+	/* Move to center vertical and fill "a" width */
+	top: 50%;
 	width: 100%;
 	margin: 0px;
+	/* Basic text styling */
 	color: white;
 	font-size: 2em;
 	font-weight: bold;
 	text-align: center;
 	line-height: 2em;
-	top: 50%;
+	/* Move down a bit and hide so we can animate a fadein */
 	transform: translateY(-40%);
 	opacity: 0;
 	-webkit-transition: all 0.33s ease;
@@ -64,6 +82,7 @@ a .image-container {
 	transition: all 0.33s ease; 
 }
 
+/* Animate the text fadein */
 .album > a:hover p {
 	opacity: 1;
 	transform: translateY(-50%);
@@ -72,11 +91,13 @@ a .image-container {
 /* Youtube Responsive Embed */
 .embed-container {
 	position: relative;
+	/* Using padding rather than height so that the percentage is of the parent, and filling it to a 16:9 aspect ratio (common to most videos)*/
 	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
 	max-width: 100%;
 }
+/* Position the video player within it */
 .embed-container iframe, .embed-container object, .embed-container embed {
 	position: absolute;
 	top: 0;

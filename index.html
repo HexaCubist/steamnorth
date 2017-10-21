@@ -4,8 +4,8 @@
 	<title>Steam North Whangarei</title>
 	<!-- Makes the site render at the native viewport size on MOST browsers, as our site is responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Essential Layouting styles -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Essential Layouting styles (Minified 5KB > 3KB) -->
+	<link rel="stylesheet" type="text/css" href="css/style.min.css">
 	<!-- Google Fonts (Roboto) -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	<!-- Album Styles -->
@@ -121,11 +121,14 @@
 			// First, we clear any current animations
 			console.log("Removing Train");
 			train.style["animation-name"] = "";
+			// We'll also try to play a sound effect:
+			var audio = new Audio('assets/easter/train.mp3');
+			audio.play();
 			setTimeout(function(){
-				// Next, we run the animation after a 1ms delay so that the browser can apply above changes.
+				// Next, we run the animation after a delay so that the browser can apply above changes, and so that the sound can kick in.
 				console.log("Running Train");
 				train.style["animation-name"] = "Woosh";
-			},1);
+			},500);
 		});
 	</script>
 	<!-- Train :D -->
