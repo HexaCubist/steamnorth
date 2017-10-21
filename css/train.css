@@ -1,0 +1,81 @@
+/* CSS for the train easter egg */
+/* Train sourced from Wikimedia Commons (https://commons.wikimedia.org/wiki/File:RABe_514_freigestellt.png) and is under a GNU license */
+
+/* Blur parent so we can implement motion blur */
+/* Drectional blur concept inspired by https://codepen.io/yukulele/pen/yyppvj */
+.blur {
+	filter: blur(1vw);
+	transform: rotate(0.75turn) scaleX(0.125);
+	position: fixed;
+	width: 100%;
+	top: 10vw;
+	z-index: 1000;
+}
+
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.train {
+	z-index: 1000; /* This train is ON TOP */
+	position: relative;
+	bottom: 150vw;
+	width: 100vw;
+	transform: scaleX(8) rotate(1.25turn);
+	animation-duration: 1s;
+	/*animation-iteration-count: infinite;*/
+	animation-timing-function: linear;
+}
+/* Makes the train move pretty fast accross the screen */
+@keyframes Woosh {
+	0% {
+		transform: scaleX(8) rotate(1.24turn)
+		bottom: 150vw;
+	}
+	10% {
+		transform: scaleX(8) rotate(1.26turn);
+		bottom: 120vw;
+	}
+	20% {
+		transform: scaleX(8) rotate(1.24turn);
+		bottom: 90vw;
+	}
+	30% {
+		transform: scaleX(8) rotate(1.26turn);
+		bottom: 60vw;
+	}
+	40% {
+		transform: scaleX(8) rotate(1.24turn);
+		bottom: 30vw;
+	}
+	50% {
+		transform: scaleX(8) rotate(1.26turn);
+		bottom: 0vw;
+	}
+	60% {
+		transform: scaleX(8) rotate(1.24turn);
+		bottom: -30vw;
+	}
+	70% {
+		transform: scaleX(8) rotate(1.26turn);
+		bottom: -60vw;
+	}
+	80% {
+		transform: scaleX(8) rotate(1.24turn);
+		bottom: -90vw;
+	}
+	90% {
+		transform: scaleX(8) rotate(1.26turn);
+		bottom: -120vw;
+	}
+	100% {
+		transform: scaleX(8) rotate(1.24turn);
+		bottom: -150vw;
+	}
+}
+
+.train.whoosh {
+	left: 200vw;
+}
+

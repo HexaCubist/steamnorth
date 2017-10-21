@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="css/album.css">
 	<!-- Hero Styles -->
 	<link rel="stylesheet" type="text/css" href="css/hero.css">
+	<!-- Easter egg styles -->
+	<link rel="stylesheet" type="text/css" href="css/train.css">
 </head>
 <body>
 	<!-- Navigation bar -->
@@ -30,14 +32,18 @@
 	</nav>
 	<!-- Header, which contains page title and/or hero content on homepage -->
 	<header class="full logo iframe" id="header-modal">
+		<!-- Background & Washout, allows for individual styling of each in CSS -->
 		<div class="background"></div>
 		<div class="background-washout"></div>
+		<!-- Logo -->
 		<img src="assets/logo_o.svg" class="logo" id="logo">
+		<!-- CTA -->
 		<button>Watch Video	&#187;</button>
 		</object>
 	</header>
 	<!-- Article, which contains primary page content -->
 	<article>
+		<!-- Photo Album set. Contains a few previews of the full page -->
 		<h2 style="text-align: center;">Photo Album</h2>
 		<div class="album">
 			<a href="pages/tour.html#album">
@@ -57,10 +63,14 @@
 				<p>View More...</p>
 			</a>
 		</div>
+		<!-- Welcome Text / Intro -->
 		<h1>Welcome to Steam North Whangarei</h1>
 		<p>The Whangarei Steam &amp; Model Railway Club was founded in 1978 by the first president Vic Seymour. Since then, the Johnny, Price, Seymour, Union Foundry and more have joined our family of locomotives.</p>
+		<!-- Spacer image -->
 		<img src="assets/photos/home-1.jpg">
+		<!-- Cards for primary pages -->
 		<div class="cards">
+			<!-- Each card uses styles provided by a CSS implementation of the Material Design Standard Elevation model -->
 			<a href="pages/about.html" class="button"><div class="card card-1">
 				<h2>History</h2>
 				<p>We've built a timeline of the history of Steam North, and you can view it on the About Us page.</p>
@@ -79,8 +89,11 @@
 		</div>
 	</article>
 	<!-- Video Modal -->
+	<!-- Not visible by default, visiblity toggled by JS -->
 	<div class="video-modal" id="video-modal">
+		<!-- Backdrop which fades out other content -->
 		<div class="modal-backdrop" id="temp-modal-bg"></div>
+		<!-- Responsive Embed container with CSS provided by embedresponsively.com -->
 		<div class="embed-container">
 			<iframe id="video-content" src='https://www.youtube.com/embed/D6EJJWabz98?rel=0&color=white&version=3&enablejsapi=1&version=3&playerapiid=ytplayer' frameborder='0' allowfullscreen></iframe>
 		</div>
@@ -98,6 +111,29 @@
 		});
 
 	</script>
+	<!-- Cheet.JS (http://lou.wtf/cheet.js/) - small easter egg -->
+	<script type="text/javascript" src="lib/cheet.min.js"></script>
+	<script type="text/javascript">
+		// Here we declare an animation to run when the user types iliketrains (at any point)
+		cheet('i l i k e t r a i n s', function () {
+			// Get the train div for later reference
+			var train = document.getElementById("train");
+			// First, we clear any current animations
+			console.log("Removing Train")
+			train.style["animation-name"] = "";
+			setTimeout(function(){
+				// Next, we run the animation after a 1ms delay so that the browser can apply above changes.
+				console.log("Running Train")
+				train.style["animation-name"] = "Woosh";
+			},1);
+
+
+		});
+	</script>
+	<!-- Train :D -->
+	<div class="blur">
+		<img src="assets/easter/train.png" class="train" id="train">
+	</div>
 </body>
 <script> 
 // I shouldn't need to use this.
