@@ -11,6 +11,7 @@
 	width: 100%;
 	top: 10vw;
 	z-index: 1000;
+	visibility: hidden;
 }
 
 body {

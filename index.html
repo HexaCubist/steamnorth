@@ -118,16 +118,21 @@
 		cheet('i l i k e t r a i n s', function () {
 			// Get the train div for later reference
 			var train = document.getElementById("train");
-			// First, we clear any current animations
-			console.log("Removing Train");
-			train.style["animation-name"] = "";
 			// We'll also try to play a sound effect:
-			var audio = new Audio('assets/easter/train.mp3');
+			var audio = new Audio('assets/easter/train.mp3'); // Horn licensed under CC0, so no attribution needed. Modified to be shorter and to fadein/fadeout better
 			audio.play();
 			setTimeout(function(){
+				// Show the parent div
+				train.parentElement.style.visibility = "visible";
 				// Next, we run the animation after a delay so that the browser can apply above changes, and so that the sound can kick in.
 				console.log("Running Train");
 				train.style["animation-name"] = "Woosh";
+				// Wait for the animation to finish
+				setTimeout( function() {
+					train.parentElement.style.visibility = "hidden";
+					console.log("Removing Train");
+					train.style["animation-name"] = "";
+				}, 1100)
 			},500);
 		});
 	</script>

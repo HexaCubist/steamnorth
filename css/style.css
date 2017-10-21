@@ -1,62 +1,72 @@
 body, html {margin: 0px;}
 
+/* Navbar Styles */
 nav {
+	/* Shift the actual content to the center */
 	max-width: 900px;
-	z-index: 11;
+	z-index: 11; /* Move to the top */
 	background: white;
 	text-align: center;
 	margin: auto;
  }
-
 	nav .items a {
+		/* Position so that each item has a height that fills the navbar and can be in line with each other */
 		display: inline-block;
 		padding: 30px;
-		text-decoration: none;
 		font-size: 15px;
 		line-height: 15px;
+		/* Text Styles */
+		text-decoration: none;
 		color: #222;
 	 }
 
-		nav .items a:hover {background: rgba(0, 0, 0, 0.11) !important;}
+		nav .items a:hover {background: rgba(0, 0, 0, 0.11) !important;} /* Hover CSS for the background */
 
-		nav .items a.active {background: #eee;}
+		nav .items a.active {background: #eee;} /* Tint the background of the page we are on */
 
+	/* Div containing items */
 	nav .items {
 		display: block;
 		text-align: center;
 	 }
-
+	
+	/* Logo Brand */
 	nav .logo {
 		height: 55px;
 		padding: 10px;
 		float: left;
 	 }
 
+/* Header (Contains either hero or page title) */
 header {
 	top: 0px;
 	margin: 0px !important;
+	/* Adds vertical padding to text or other content */
 	padding: 100px 0px;
 	text-align: center;
 	position: relative;
+	/* Hide overflow - specifcally for Background to stop scrolling */
 	overflow: hidden;
  }
-
-	header.full {margin: 200px 0px;}
-
-		header.full.logo {
-			cursor: pointer;
-			text-align: center;
-		 }
-
+	/* Hint interactivity with logo */
+	header.full.logo {
+		cursor: pointer;
+		text-align: center;
+	 }
+	
+	/* Position header text and media*/
 	header h1, header object, header img {
 		max-width: 30%;
 		margin: auto;
 		position: relative;
+		/* Appear in front of the background */
 		z-index: 10;
 		font-size: 3em;
 	 }
-
+	
+	/* Fill screen with washout*/
 	header .background-washout {
+		background: rgba(255,255,255,0.3);
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -69,6 +79,10 @@ header {
 		height: 100%;
 		position: absolute;
 		top: 0px;
+		background-size: cover;
+		background-position: center;
+		background-image: url('../assets/feature-1-o.jpg');
+		background-size: cover;
 	 }
 
 	header.full.logo .background {
@@ -168,39 +182,7 @@ nav a img {opacity: 1;}
 
 	nav a img:hover {opacity: 0.5;}
 
-/* Header Styles */
-header .background {
-	background-size: cover;
-	background-position: center;
-	background-image: url('../assets/feature-1-o.jpg');
- }
 
-header .background-washout {background: rgba(255,255,255,0.3);}
-
-header .background {background-size: cover;}
-
-header button {
-	position: relative;
-	display: block;
-	margin: auto;
-	font-size: 1.5em;
-	background: rgb(0, 0, 0);
-	border: 0px transparent;
-	z-index: 1;
-	color: white;
-	font-weight: 700;
-	padding: 10px 15px 10px 15px;
-	border-radius: 5px;
-	transition: all 0.5s ease-out;
-	opacity: 1;
-	cursor: pointer;
-	transform: scale(1);
- }
-
-header:hover button {
-	opacity: 0.7;
-	transform: scale(1.1);
- }
 
 /* Material Design Box Shadows */
 /* Taken from https://codepen.io/sdthornton/pen/wBZdXq */
