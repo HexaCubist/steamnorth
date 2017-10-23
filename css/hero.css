@@ -31,7 +31,7 @@ header.full.logo .background {
 
 /* Zoom in the Background by default */
 header.full.logo .background {
-	animation: slide 9s ease-out infinite;
+	animation: slide 60s ease-out infinite;
 	background-size: 125vw;
 	transform: translateX(0vw) scale(1.2)
 }
