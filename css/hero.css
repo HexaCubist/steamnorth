@@ -1,77 +1,13 @@
-/* Hero background washout - reduced slightly compared to default due to blurring making a more saturated and brighter appearance okay. */
-header.full.logo .background-washout {background: rgba(255,255,255,0.2);}
-
-/* Header Logo animation (zoom out ) */
-header.full.logo:hover .logo {transform: scale(0.95);}
-
-/* longer transition for logo and bg */
-header.full.logo .logo, header.full.logo .background {transition: all 0.5s ease-in-out;}
-
-/* Blur the backgron on hover */
-header.full.logo:hover .background {
-    filter: blur(8px);
-    background-size: 120vw;
-    height: 120%;
-    top: -10%;
-}
-
-/* Hint interactivity with logo */
-header.full.logo {
-		cursor: pointer;
-		text-align: center;
-}
-		
-/* Full header background is sized and positioned so that it can animate with a left-right pan */
-header.full.logo .background {
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	width: 120vw;
-}
-
-/* Zoom in the Background by default */
-header.full.logo .background {
-	animation: slide 60s ease-out infinite;
-	background-size: 125vw;
-	transform: translateX(0vw) scale(1.2)
-}
-
-/* Button CSS for the header */
-header button {
-	/* Center Align */
-	position: relative;
-	display: block;
-	margin: auto;
-	/* Font and basic styles */
-	font-size: 1.5em;
-	background: rgb(0, 0, 0);
-	border: 0px transparent;
-	z-index: 1;
-	color: white;
-	font-weight: 700;
-	padding: 10px 15px 10px 15px;
-	border-radius: 5px;
-	transition: all 0.5s ease-out;
-	opacity: 1;
-	/* Hand pointer on hover to indicate interactivity */
-	cursor: pointer;
-	/* Default scale */
-	transform: scale(1);
- }
-
-/* Zoom in the button and make it slightly transparent on hover */
-header:hover button {
-	opacity: 0.7;
-	transform: scale(1.1);
- }
-
-
-
-/* Header CSS Animation */
-/* This is why we placed the background in a separate div - so that we can animate it with transform for subpixel animation (smoother)*/
-
-@keyframes slide {
-	0% {transform: translateX(0vw); }
-	50% {transform: translateX(-20vw); }
-	100% {transform: translateX(0vw); }
+header.full.logo .background-washout{background:rgba(255,255,255,0.2);}
+header.full.logo:hover .logo{transform:scale(0.95);}
+header.full.logo .logo, header.full.logo .background{transition:all 0.5s ease-in-out;}
+header.full.logo:hover .background{filter:blur(8px);background-size:120vw;height:120%;top:-10%;}
+header.full.logo{cursor:pointer;text-align:center;}
+header.full.logo .background{height:100%;position:absolute;top:0px;width:120vw;}
+header.full.logo .background{animation:slide 60s ease-out infinite;background-size:125vw;transform:translateX(0vw) scale(1.2)}
+header button{position:relative;display:block;margin:auto;font-size:1.5em;background:rgb(0, 0, 0);border:0px transparent;z-index:1;color:white;font-weight:700;padding:10px 15px 10px 15px;border-radius:5px;transition:all 0.5s ease-out;opacity:1;cursor:pointer;transform:scale(1);}
+header:hover button{opacity:0.7;transform:scale(1.1);}
+@keyframes slide{0%{transform:translateX(0vw);}
+50%{transform:translateX(-20vw);}
+100%{transform:translateX(0vw);}
 }

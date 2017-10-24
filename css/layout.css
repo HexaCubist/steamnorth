@@ -1,0 +1,25 @@
+/* Core CSS That defines basic page layout before other CSS is loaded in Async */
+/* Basic Album */
+.album{display:flex;justify-content:left;flex-wrap:wrap;width:100%;}
+/* Basic Body/HTML */
+body{font-family:'Roboto', sans-serif;}
+body, html{margin:0px;}
+/* Basic Article */
+article{margin:auto;max-width:calc(100% - 60px);padding:30px;width:900px;}
+article > *:first-child{margin-top:0px;padding-top:0px;}
+article img{max-width:100%;}
+
+/* Basic Header/Hero */
+header{margin:0px !important;overflow:hidden;padding:100px 0px;position:relative;text-align:center;top:0px;}
+header h1, header object, header img{font-size: 3em;margin: auto;max-width: 30%;position: relative;}
+header .background{background-position: center;}
+
+/* Basic Navbar */
+nav{margin:auto;max-width:900px;text-align:center;z-index:11;}
+nav .items{display:block;text-align:center;}
+nav .items a{color:#222;display:inline-block;font-size:15px;line-height:15px;padding:30px;text-decoration:none;}
+nav .logo{float:left;height:55px;padding:10px;}
+@media (max-width:900px){nav .logo{width:100%;}}
+
+/* Fix Youtube Video before full load */
+.embed-container{position: relative;padding-bottom: 56.25%;}

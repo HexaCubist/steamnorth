@@ -5,15 +5,16 @@
 	<!-- Makes the site render at the native viewport size on MOST browsers, as our site is responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Essential Layouting styles -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="print" onload="if(media!='all')media='all'">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
 	<!-- Google Fonts (Roboto) -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" media="print" onload="if(media!='all')media='all'">
 	<!-- Album Styles -->
-	<link rel="stylesheet" type="text/css" href="css/album.css">
+	<link rel="stylesheet" type="text/css" href="css/album.css" media="print" onload="if(media!='all')media='all'">
 	<!-- Hero Styles -->
-	<link rel="stylesheet" type="text/css" href="css/hero.css">
+	<link rel="stylesheet" type="text/css" href="css/hero.css" media="print" onload="if(media!='all')media='all'">
 	<!-- Easter egg styles -->
-	<link rel="stylesheet" type="text/css" href="css/train.css">
+	<link rel="stylesheet" type="text/css" href="css/train.css" media="print" onload="if(media!='all')media='all'">
 </head>
 <body>
 	<!-- Navigation bar -->
@@ -112,8 +113,8 @@
 
 	</script>
 	<!-- Cheet.JS (http://lou.wtf/cheet.js/) - small easter egg -->
-	<script type="text/javascript" src="lib/cheet.min.js"></script>
-	<script type="text/javascript">
+	<script async type="text/javascript" src="lib/cheet.min.js"></script>
+	<script defer type="text/javascript">
 		// Here we declare an animation to run when the user types iliketrains (at any point)
 		cheet('i l i k e t r a i n s', function () {
 			// Get the train div for later reference

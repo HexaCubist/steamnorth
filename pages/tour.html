@@ -5,11 +5,12 @@
 	<!-- Makes the site render at the native viewport size on MOST browsers, as our site is responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Essential Layouting styles -->
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css" media="print" onload="if(media!='all')media='all'">
+	<link rel="stylesheet" type="text/css" href="../css/layout.css">
 	<!-- Album Styles -->
-	<link rel="stylesheet" type="text/css" href="../css/album.css">
+	<link rel="stylesheet" type="text/css" href="../css/album.css" media="print" onload="if(media!='all')media='all'">
 	<!-- Google Fonts (Roboto) -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" media="print" onload="if(media!='all')media='all'">
 </head>
 <body>
 	<!-- Navigation bar -->
